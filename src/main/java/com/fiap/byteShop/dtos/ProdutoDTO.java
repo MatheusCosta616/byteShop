@@ -1,25 +1,14 @@
-package com.fiap.byteShop.model;
+package com.fiap.byteShop.dtos;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "produto")
-public class Produto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProdutoDTO {
     private Long id;
-    @Column(name = "nome")
     private String nome;
-    @Column(name = "precos")
     private Float preco;
-    @Column(name = "categoria")
     private String categoria;
-    @Column(name = "descricao")
     private String descricao;
-    @Column(name = "ativo")
     private Boolean ativo;
 
-    public Produto(Long id, String nome, Float preco, String categoria, String descricao, Boolean ativo) {
+    public ProdutoDTO(Long id, String nome, Float preco, String categoria, String descricao, Boolean ativo) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
@@ -28,7 +17,7 @@ public class Produto {
         this.ativo = ativo;
     }
 
-    public Produto() {
+    public ProdutoDTO() {
     }
 
     public Long getId() {
