@@ -19,6 +19,9 @@ public class Produto {
     @Column(name = "ativo")
     private Boolean ativo;
 
+    public Produto() {
+    }
+
     public Produto(Long id, String nome, Float preco, String categoria, String descricao, Boolean ativo) {
         this.id = id;
         this.nome = nome;
@@ -26,9 +29,6 @@ public class Produto {
         this.categoria = categoria;
         this.descricao = descricao;
         this.ativo = ativo;
-    }
-
-    public Produto() {
     }
 
     public Long getId() {
