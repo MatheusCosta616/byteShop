@@ -10,7 +10,7 @@ public class Produto {
     private Long id;
     @Column(name = "nome")
     private String nome;
-    @Column(name = "precos")
+    @Column(name = "preco")
     private Float preco;
     @Column(name = "categoria")
     private String categoria;
