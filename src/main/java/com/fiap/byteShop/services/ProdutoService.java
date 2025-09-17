@@ -1,6 +1,5 @@
 package com.fiap.byteShop.services;
 
-import com.fiap.byteShop.dtos.ProdutoDTO;
 import com.fiap.byteShop.models.Produto;
 
 import java.util.List;

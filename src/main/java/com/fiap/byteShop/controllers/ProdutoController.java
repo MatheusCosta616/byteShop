@@ -1,6 +1,5 @@
 package com.fiap.byteShop.controllers;
 
-import com.fiap.byteShop.dtos.ProdutoDTO;
 import com.fiap.byteShop.services.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

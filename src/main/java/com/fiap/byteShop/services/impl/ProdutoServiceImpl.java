@@ -1,6 +1,5 @@
 package com.fiap.byteShop.services.impl;
 
-import com.fiap.byteShop.dtos.ProdutoDTO;
 import com.fiap.byteShop.models.Produto;
 import com.fiap.byteShop.repositories.ProdutoRepository;
 import com.fiap.byteShop.services.ProdutoService;
