@@ -1,15 +1,15 @@
 package com.fiap.byteShop.dtos;
 
-public class CarrinhoDTO {
+public class ClienteDTO {
     private Long id;
     private String nome;
     private String email;
     private String documento;
 
-    public CarrinhoDTO() {
+    public ClienteDTO() {
     }
 
-    public CarrinhoDTO(Long id, String nome, String email, String documento) {
+    public ClienteDTO(Long id, String nome, String email, String documento) {
         this.id = id;
         this.nome = nome;
         this.email = email;
