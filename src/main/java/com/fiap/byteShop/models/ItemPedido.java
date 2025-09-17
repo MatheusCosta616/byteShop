@@ -19,15 +19,27 @@ public class ItemPedido {
     @Column(name = "preco_unitario", nullable = false)
     private Double precoUnitario;
 
+    @Column(name = "subtotal", nullable = false)
+    private Double subtotal;
+
     public ItemPedido() {
     }
 
-    public ItemPedido(Long id, Pedido pedido, Produto produto, Integer quantidade, Double precoUnitario) {
+    public ItemPedido(Long id, Pedido pedido, Produto produto, Integer quantidade, Double precoUnitario, Double subtotal) {
         this.id = id;
         this.pedido = pedido;
         this.produto = produto;
         this.quantidade = quantidade;
         this.precoUnitario = precoUnitario;
+        this.subtotal = subtotal;
+    }
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
     }
 
     public Long getId() {

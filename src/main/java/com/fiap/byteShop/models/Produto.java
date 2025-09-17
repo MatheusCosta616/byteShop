@@ -11,7 +11,7 @@ public class Produto {
     @Column(name = "nome")
     private String nome;
     @Column(name = "preco")
-    private Float preco;
+    private Double preco;
     @Column(name = "categoria")
     private String categoria;
     @Column(name = "descricao")
@@ -22,7 +22,7 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(Long id, String nome, Float preco, String categoria, String descricao, Boolean ativo) {
+    public Produto(Long id, String nome, Double preco, String categoria, String descricao, Boolean ativo) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
@@ -47,11 +47,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    public Float getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(Float preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 

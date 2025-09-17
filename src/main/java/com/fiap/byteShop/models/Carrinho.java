@@ -8,16 +8,27 @@ public class Carrinho {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne
-    @JoinColumn(name = "cliente_id", nullable = false, unique = true)
+    
+    @ManyToOne
+    @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
+    
+    @Column(name = "total")
+    private Double total;
+    
+    @Column(name = "ativo")
+    private Boolean ativo;
 
     public Carrinho() {
+        this.total = 0.0;
+        this.ativo = true;
     }
 
-    public Carrinho(Long id, Cliente cliente) {
+    public Carrinho(Long id, Cliente cliente, Double total, Boolean ativo) {
         this.id = id;
         this.cliente = cliente;
+        this.total = total;
+        this.ativo = ativo;
     }
 
     public Long getId() {
@@ -34,5 +45,21 @@ public class Carrinho {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+    
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
 }

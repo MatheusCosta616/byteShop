@@ -1,5 +1,7 @@
 package com.fiap.byteShop.controllers;
 
+import com.fiap.byteShop.dtos.ProdutoRequestDTO;
+import com.fiap.byteShop.dtos.ProdutoResponseDTO;
 import com.fiap.byteShop.services.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,30 +14,28 @@ public class ProdutoController {
     @Autowired
     private ProdutoService produtoService;
 
-    @PostMapping
-    public ResponseEntity<ProdutoDTO> createProduto(@RequestBody ProdutoDTO produtoDTO){
-        produtoService.save(produtoDTO);
-        return ResponseEntity.status(201).body(produtoDTO);
-    }
-
     @GetMapping
-    public ResponseEntity<?> getAllProdutos(){
+    public ResponseEntity<java.util.List<ProdutoResponseDTO>> listarProdutos() {
         return ResponseEntity.ok(produtoService.getAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProdutoDTO> getProdutoById(@PathVariable Long id) {
+    public ResponseEntity<ProdutoResponseDTO> buscarPorId(@PathVariable Long id) {
         return ResponseEntity.ok(produtoService.findById(id));
     }
 
+    @PostMapping
+    public ResponseEntity<ProdutoResponseDTO> criar(@RequestBody ProdutoRequestDTO dto) {
+        return ResponseEntity.status(201).body(produtoService.save(dto));
+    }
+
     @PutMapping("/{id}")
-    public ResponseEntity<ProdutoDTO> updateProduto(@PathVariable Long id, @RequestBody ProdutoDTO produtoDTO) {
-        produtoService.update(id, produtoDTO);
-        return ResponseEntity.ok(produtoDTO);
+    public ResponseEntity<ProdutoResponseDTO> atualizar(@PathVariable Long id, @RequestBody ProdutoRequestDTO dto) {
+        return ResponseEntity.ok(produtoService.update(id, dto));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProduto(@PathVariable Long id) {
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
         produtoService.delete(id);
         return ResponseEntity.noContent().build();
     }

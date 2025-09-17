@@ -12,14 +12,14 @@ public class Pedido {
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
     @Column(name = "total", nullable = false)
-    private Float total;
+    private Double total;
     @Column(name = "status", nullable = false)
     private String status;
 
     public Pedido() {
     }
 
-    public Pedido(Long id, Cliente cliente, Float total, String status) {
+    public Pedido(Long id, Cliente cliente, Double total, String status) {
         this.id = id;
         this.cliente = cliente;
         this.total = total;
@@ -42,11 +42,11 @@ public class Pedido {
         this.cliente = cliente;
     }
 
-    public Float getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(Float total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
 

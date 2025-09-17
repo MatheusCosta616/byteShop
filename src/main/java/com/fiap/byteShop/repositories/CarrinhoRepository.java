@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CarrinhoRepository extends JpaRepository<Carrinho, Long> {
+	Carrinho findByClienteIdAndAtivo(Long clienteId, Boolean ativo);
 }

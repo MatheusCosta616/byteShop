@@ -17,17 +17,21 @@ public class ItemCarrinho {
     @Column(name = "quantidade")
     private Integer quantidade;
     @Column(name = "preco_unitario", nullable = false)
-    private Float precoUnitario;
+    private Double precoUnitario;
+
+    @Column(name = "subtotal", nullable = false)
+    private Double subtotal;
 
     public ItemCarrinho() {
     }
 
-    public ItemCarrinho(Long id, Carrinho carrinho, Produto produto, Integer quantidade, Float precoUnitario) {
+    public ItemCarrinho(Long id, Carrinho carrinho, Produto produto, Integer quantidade, Double precoUnitario, Double subtotal) {
         this.id = id;
         this.carrinho = carrinho;
         this.produto = produto;
         this.quantidade = quantidade;
         this.precoUnitario = precoUnitario;
+        this.subtotal = subtotal;
     }
 
     public Long getId() {
@@ -62,11 +66,19 @@ public class ItemCarrinho {
         this.quantidade = quantidade;
     }
 
-    public Float getPrecoUnitario() {
+    public Double getPrecoUnitario() {
         return precoUnitario;
     }
 
-    public void setPrecoUnitario(Float precoUnitario) {
+    public void setPrecoUnitario(Double precoUnitario) {
         this.precoUnitario = precoUnitario;
+    }
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
     }
 }
